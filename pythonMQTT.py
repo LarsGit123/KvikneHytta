@@ -7,11 +7,11 @@ topicCmd="Kvikne/cmd"
 topicMaint="Kvikne/maint"
 AT16host="178.164.99.145"
 
-def on_connect(self, client, userdata,rc):
+def on_connect(client, userdata, flags, rc):
     print("connected" + str(rc))
     time.sleep(5)
     sub(client)
-    
+   
     
 def on_message(client, userdata, message):
     time.sleep(1)
