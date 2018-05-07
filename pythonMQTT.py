@@ -16,10 +16,10 @@ def on_connect(self, client, userdata,rc):
 def on_message(client, userdata, message):
     time.sleep(1)
     print("Received message "+ str(message.payload) + " on topic "+message.topic)
-    if message.topic==topicCmd && message.payload:
+    if message.topic==topicCmd and message.payload:
         print("post picture")
         postPic()
-    elif message.topic==topicMaint && message.payload:
+    elif message.topic==topicMaint and message.payload:
         client.disconnect()
         time.sleep(5)
         client.connect(AT16host)
